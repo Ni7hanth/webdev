@@ -1,0 +1,92 @@
+<!-- description.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Description</title>
+    <script defer src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script defer src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script defer src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script defer type="text/babel" src="description.js"></script>
+    <style>
+        body {
+            font-family: "Google Sans", Helvetica, Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 2rem;
+            background-color: #A8A9AD;
+        }
+
+        .container {
+            max-width: 80%;
+            margin: auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: #f4f4f4;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 0.5rem;
+        }
+
+        button {
+            padding: 1rem;
+            font-size: 1rem;
+            background: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function DescriptionPage() {
+            const techStack = [
+                "HTML, CSS, and JavaScript for the main page",
+                "React.js for this description page",
+                "LocalStorage for saving tasks",
+                "Responsive Design with Media Queries",
+                "Confetti Animation for task completion",
+                "Dynamic task handling using JavaScript"
+            ];
+
+            return (
+                <div className="container">
+                    <h2>About This Project</h2>
+                    <p>This to-do list app was built using:</p>
+                    <ul>
+                        {techStack.map((tech, index) => (
+                            <li key={index}>{tech}</li>
+                        ))}
+                    </ul>
+                    <button onClick={() => window.location.href='index.html'}>
+                        Back to To-Do List
+                    </button>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<DescriptionPage />, document.getElementById("root"));
+    </script>
+
+</body>
+</html>
